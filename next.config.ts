@@ -2,6 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+  images: {
+    remotePatterns: [
+      { hostname: "*.public.blob.vercel-storage.com" },
+    ],
+  },
   // Allow dev tunnel hosts for RSC payload fetches
   async headers() {
     return [

@@ -32,7 +32,7 @@ export function ArtworkAdminList({ artworks: initial }: { artworks: Artwork[] })
         <div key={artwork.id} className="group relative">
           <div className="relative aspect-[4/5] border-2 border-ink/40 rounded-tl rounded-tr-[5px] rounded-br-sm rounded-bl-[5px] overflow-hidden bg-parchment-dark/40">
             <Image
-              src={`/uploads/${artwork.filename}`}
+              src={artwork.url}
               alt={artwork.title}
               fill
               className="object-cover"

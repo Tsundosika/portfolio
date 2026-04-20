@@ -8,8 +8,8 @@ export const metadata = {
   description: "Full gallery of artworks by Ren, aka Tsundosika",
 };
 
-export default function GalleryPage() {
-  const artworks = readArtworks();
+export default async function GalleryPage() {
+  const artworks = await readArtworks();
 
   return (
     <>

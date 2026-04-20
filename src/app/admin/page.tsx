@@ -22,8 +22,7 @@ export default async function AdminPage() {
     redirect("/admin/login");
   }
 
-  const artworks = readArtworks();
-  const { commissionsOpen } = readSettings();
+  const [artworks, { commissionsOpen }] = await Promise.all([readArtworks(), readSettings()]);
 
   return (
     <main className="min-h-screen px-6 md:px-12 py-12 max-w-5xl mx-auto">

@@ -37,7 +37,7 @@ function Lightbox({ artwork, onClose }: { artwork: Artwork; onClose: () => void 
         <div className="relative flex-1 min-h-0 bg-parchment-dark/20 overflow-hidden">
           <div className="absolute inset-4 border border-brown/10 rounded-xs pointer-events-none z-10" />
           <Image
-            src={`/uploads/${artwork.filename}`}
+            src={artwork.url}
             alt={artwork.title}
             width={1200}
             height={900}
@@ -80,7 +80,7 @@ export function ArtworkCard({ artwork }: { artwork: Artwork }) {
         <div className="relative border-2 border-ink/55 rounded-tl rounded-tr-[5px] rounded-br-sm rounded-bl-[5px] shadow-[4px_4px_0_0_rgba(30,19,10,0.14),-1px_-1px_0_0_rgba(30,19,10,0.07)] hover:shadow-[5px_5px_0_0_rgba(30,19,10,0.2)] hover:-translate-y-1 transition-all duration-200 overflow-hidden bg-parchment-dark/40">
           <div className="relative aspect-4/5">
             <Image
-              src={`/uploads/${artwork.filename}`}
+              src={artwork.url}
               alt={artwork.title}
               fill
               className="object-cover"

@@ -2,8 +2,8 @@ import { readArtworks } from "@/lib/gallery";
 import { ArtworkCard } from "./artwork-card";
 import { GalleryShowMore } from "./gallery-show-more";
 
-export function Gallery() {
-  const artworks = readArtworks();
+export async function Gallery() {
+  const artworks = await readArtworks();
   const preview = artworks.slice(0, 6);
 
   return (

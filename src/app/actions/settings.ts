@@ -16,9 +16,9 @@ async function assertAdmin(): Promise<void> {
 
 export async function setCommissionsOpen(open: boolean): Promise<void> {
   await assertAdmin();
-  const settings = readSettings();
+  const settings = await readSettings();
   settings.commissionsOpen = open;
-  writeSettings(settings);
+  await writeSettings(settings);
   revalidatePath("/");
   revalidatePath("/admin");
 }

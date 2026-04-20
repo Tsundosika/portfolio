@@ -36,7 +36,7 @@ function Divider() {
 }
 
 async function ContactSection() {
-  const { commissionsOpen } = readSettings();
+  const { commissionsOpen } = await readSettings();
   return (
     <section id="contact" className="px-6 md:px-12 py-20 max-w-3xl mx-auto w-full text-center">
       <h2 className="text-5xl md:text-6xl font-bold text-ink mb-4">
