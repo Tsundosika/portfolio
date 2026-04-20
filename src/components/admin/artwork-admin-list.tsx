@@ -1,6 +1,6 @@
 "use client";
 
-import { useTransition, useState } from "react";
+import { useTransition, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -9,6 +9,8 @@ import type { Artwork } from "@/types/artwork";
 
 export function ArtworkAdminList({ artworks: initial }: { artworks: Artwork[] }) {
   const [artworks, setArtworks] = useState(initial);
+
+  useEffect(() => { setArtworks(initial); }, [initial]);
   const [pending, startTransition] = useTransition();
   const router = useRouter();
 
@@ -30,7 +32,7 @@ export function ArtworkAdminList({ artworks: initial }: { artworks: Artwork[] })
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
       {artworks.map((artwork) => (
         <div key={artwork.id} className="group relative">
-          <div className="relative aspect-[4/5] border-2 border-ink/40 rounded-tl rounded-tr-[5px] rounded-br-sm rounded-bl-[5px] overflow-hidden bg-parchment-dark/40">
+          <div className="relative aspect-4/5 border-2 border-ink/40 rounded-tl rounded-tr-[5px] rounded-br-sm rounded-bl-[5px] overflow-hidden bg-parchment-dark/40">
             <Image
               src={artwork.url}
               alt={artwork.title}
