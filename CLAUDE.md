@@ -61,8 +61,8 @@ src/
 
 | Thing | Convention |
 |---|---|
-| Components | `PascalCase` |
-| Files & folders | `PascalCase` for components, `camelCase` for lib/utils |
+| Components | `kebab-case` |
+| Files & folders | `kebab-case` for components, `camelCase` for lib/utils |
 | TypeScript types | `PascalCase` with descriptive suffix (`Props`, `Data`, `Config`) |
 | Server actions | `camelCase` verbs (`fetchProjects`, `submitContact`) |
 
