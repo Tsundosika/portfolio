@@ -7,6 +7,7 @@ import { UploadForm } from "@/components/admin/upload-form";
 import { ArtworkAdminList } from "@/components/admin/artwork-admin-list";
 import { CommissionsToggle } from "@/components/admin/commissions-toggle";
 
+export const dynamic = "force-dynamic";
 export const metadata = { title: "Studio Admin -Ren" };
 
 async function handleLogout(_formData: FormData): Promise<void> {

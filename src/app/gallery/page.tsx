@@ -3,6 +3,8 @@ import { ArtworkCard } from "@/components/gallery/artwork-card";
 import { GalleryBackButton } from "@/components/gallery/gallery-back-button";
 import { readArtworks } from "@/lib/gallery";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Gallery -Ren (Tsundosika)",
   description: "Full gallery of artworks by Ren, aka Tsundosika",
