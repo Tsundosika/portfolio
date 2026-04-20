@@ -15,16 +15,14 @@ src/
     layout.tsx                        # Root layout
     <page>/
       page.tsx                        # Page entry (server component)
-      components/
-        <Feature>/
-          index.tsx                   # Public export
-          <Feature>.tsx               # Component logic
-          <SubFeature>/
-            index.tsx
-            <SubFeature>.tsx
   components/
     ui/                               # Shared primitives (Button, Card, etc.)
-    layout/                           # Header, Footer, Nav
+    layout/          
+    <Feature>/
+        <Feature>.tsx               # Component logic && Public Export
+          <SubFeature>/
+            index.tsx
+            <SubFeature>.tsx  # Header, Footer, Nav
   lib/                                # Utilities, data fetching, constants
   types/                              # Shared TypeScript interfaces
 ```
@@ -33,15 +31,13 @@ src/
 
 ### Components
 
-- Every component lives in its **own folder** named after it, with an `index.tsx` re-export — Java-style package structure.
-- Default export from the component file; named re-export from `index.tsx`.
 - Page `page.tsx` files are **Server Components** by default. Add `"use client"` only at the lowest possible leaf that needs interactivity.
-- No barrel files at the `app/` level — import directly from component paths.
+- No barrel files at the `app/` level -import directly from component paths.
 
 ### Server vs Client
 
 - Fetch data in Server Components and pass as props; never fetch in Client Components unless necessary (e.g., SWR for user-specific real-time data).
-- Keep Client Components as leaves — never wrap a Server Component tree in `"use client"`.
+- Keep Client Components as leaves -never wrap a Server Component tree in `"use client"`.
 - Use `async/await` directly in Server Components for data fetching.
 
 ### Code Quality
@@ -50,11 +46,11 @@ src/
 - No `console.log` left in production code.
 - Prefer explicit types over `any`; never use `as any`.
 - Destructure props at the function signature.
-- Keep components small and single-purpose — split when a component exceeds ~80 lines.
+- Keep components small and single-purpose -split when a component exceeds ~80 lines.
 
 ### Styling
 
-- Tailwind CSS v4 utility classes only — no inline `style` props, no CSS modules.
+- Tailwind CSS v4 utility classes only -no inline `style` props, no CSS modules.
 - Responsive-first: mobile breakpoint is the default, scale up with `md:`, `lg:`.
 
 ### Naming
@@ -68,12 +64,12 @@ src/
 
 ### Imports
 
-Order: React → Next.js → third-party → internal (`@/`) — separated by blank lines.
+Order: React → Next.js → third-party → internal (`@/`) -separated by blank lines.
 
 ### What to Avoid
 
 - `"use client"` on page or layout files.
 - Mixing data fetching and UI in the same component.
-- Deeply nested ternaries in JSX — extract to a variable or sub-component.
-- Default exports for utility functions — use named exports.
-- The `ignoreScripts` / `trustedDependencies` fields are Bun-specific config — do not remove them.
+- Deeply nested ternaries in JSX -extract to a variable or sub-component.
+- Default exports for utility functions -use named exports.
+- The `ignoreScripts` / `trustedDependencies` fields are Bun-specific config -do not remove them.

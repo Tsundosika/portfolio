@@ -1,3 +1,15 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(bun add *)",
+      "Bash(git -C /c/Users/musa/Desktop/portfolio remote -v)",
+      "WebFetch(domain:npmx.dev)",
+      "WebFetch(domain:www.npmjs.com)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:unpkg.com)",
+      "WebFetch(domain:blog.logrocket.com)"
+    ]
+  },
   "enabledPlugins": {}
 }

@@ -10,7 +10,7 @@ Increase visual impact and personality in designs that are too safe, generic, or
 
 ## MANDATORY PREPARATION
 
-Invoke /impeccable — it contains design principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding — if no design context exists yet, you MUST run /impeccable teach first.
+Invoke /impeccable -it contains design principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding -if no design context exists yet, you MUST run /impeccable teach first.
 
 ---
 
