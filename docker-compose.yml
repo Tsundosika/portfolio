@@ -13,15 +13,11 @@ services:
     environment:
       - NODE_ENV=production
     volumes:
-      - uploads_data:/app/next-app/public/uploads
-      - gallery_data:/app/next-app/src/data
+      - ./public/uploads:/app/next-app/public/uploads
+      - ./src/data:/app/next-app/src/data
     restart: unless-stopped
     networks:
       - shared
-
-volumes:
-  uploads_data:
-  gallery_data:
 
 networks:
   shared:

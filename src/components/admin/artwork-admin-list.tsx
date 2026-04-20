@@ -37,6 +37,7 @@ export function ArtworkAdminList({ artworks: initial }: { artworks: Artwork[] })
               fill
               className="object-cover"
               sizes="20vw"
+              unoptimized={artwork.url.startsWith("/uploads/")}
             />
             <button
               onClick={() => handleDelete(artwork.id)}

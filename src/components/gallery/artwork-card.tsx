@@ -44,6 +44,7 @@ function Lightbox({ artwork, onClose }: { artwork: Artwork; onClose: () => void 
             className="w-full h-full object-contain"
             style={{ maxHeight: "62vh" }}
             sizes="(max-width: 768px) 95vw, 42rem"
+            unoptimized={artwork.url.startsWith("/uploads/")}
             priority
           />
         </div>
@@ -85,6 +86,7 @@ export function ArtworkCard({ artwork }: { artwork: Artwork }) {
               fill
               className="object-cover"
               sizes="(max-width: 768px) 50vw, 33vw"
+              unoptimized={artwork.url.startsWith("/uploads/")}
             />
             <div className="absolute inset-3 border border-brown/15 rounded-xs pointer-events-none" />
             <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors duration-200" />
