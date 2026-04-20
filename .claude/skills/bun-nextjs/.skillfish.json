@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "bun-nextjs",
+  "owner": "secondsky",
+  "repo": "claude-skills",
+  "path": "plugins/bun/skills/bun-nextjs",
+  "branch": "main",
+  "sha": "2b2281a1ec6d408e7d80af76bbc0405006c532eb",
+  "source": "manual"
+}
