@@ -7,6 +7,7 @@ import { About } from "@/components/about/About";
 import { WorkedFor } from "@/components/worked-for/WorkedFor";
 import { ScrollReveal } from "@/components/layout/scroll-reveal";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { LiveReload } from "@/components/layout/live-reload";
 import { readSettings } from "@/lib/gallery";
 
 function Divider() {
@@ -55,6 +56,7 @@ async function ContactSection() {
 export default function Home() {
   return (
     <>
+      <LiveReload />
       <Nav />
       <main>
         <Hero />

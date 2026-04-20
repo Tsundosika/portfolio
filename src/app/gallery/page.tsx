@@ -1,6 +1,7 @@
 import { Nav } from "@/components/layout/nav/nav";
 import { ArtworkCard } from "@/components/gallery/artwork-card";
 import { GalleryBackButton } from "@/components/gallery/gallery-back-button";
+import { LiveReload } from "@/components/layout/live-reload";
 import { readArtworks } from "@/lib/gallery";
 
 export const dynamic = "force-dynamic";
@@ -15,6 +16,7 @@ export default async function GalleryPage() {
 
   return (
     <>
+      <LiveReload />
       <Nav />
       <main className="px-6 md:px-12 py-16 max-w-6xl mx-auto w-full">
         <div className="flex items-baseline justify-between mb-14">
