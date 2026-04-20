@@ -8,11 +8,20 @@ services:
     container_name: portfolio
     ports:
       - "3000:3000"
+    env_file:
+      - .env
     environment:
       - NODE_ENV=production
+    volumes:
+      - uploads_data:/app/next-app/public/uploads
+      - gallery_data:/app/next-app/src/data
     restart: unless-stopped
     networks:
       - shared
+
+volumes:
+  uploads_data:
+  gallery_data:
 
 networks:
   shared:

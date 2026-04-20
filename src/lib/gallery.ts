@@ -18,8 +18,18 @@ export function ensureUploadsDir(): void {
   if (!existsSync(UPLOADS_DIR)) mkdirSync(UPLOADS_DIR, { recursive: true });
 }
 
+type LegacyArtwork = Artwork & { filename?: string };
+
+function migrateArtwork(a: LegacyArtwork): Artwork {
+  if (!a.url && a.filename) return { ...a, url: `/uploads/${a.filename}` };
+  return a;
+}
+
 function fsReadArtworks(): Artwork[] {
-  try { return JSON.parse(readFileSync(GALLERY_FILE, "utf-8")); } catch { return []; }
+  try {
+    const raw: LegacyArtwork[] = JSON.parse(readFileSync(GALLERY_FILE, "utf-8"));
+    return raw.map(migrateArtwork);
+  } catch { return []; }
 }
 function fsWriteArtworks(a: Artwork[]): void {
   if (!existsSync(DATA_DIR)) mkdirSync(DATA_DIR, { recursive: true });
@@ -37,7 +47,8 @@ function fsWriteSettings(s: SiteSettings): void {
 
 async function kvReadArtworks(): Promise<Artwork[]> {
   const { kv } = await import("@vercel/kv");
-  return (await kv.get<Artwork[]>("gallery")) ?? [];
+  const raw = (await kv.get<LegacyArtwork[]>("gallery")) ?? [];
+  return raw.map(migrateArtwork);
 }
 async function kvWriteArtworks(a: Artwork[]): Promise<void> {
   const { kv } = await import("@vercel/kv");
