@@ -6,6 +6,7 @@ import { FloatingBotanicals } from "@/components/layout/floating-botanicals";
 import { HangingVines } from "@/components/layout/hanging-vines";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { CookieBanner } from "@/components/layout/cookie-banner";
+import { CommissionStatus } from "@/components/contact/CommissionStatus";
 
 const caveat = Caveat({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
           <FloatingBotanicals />
           <HangingVines />
           {children}
+          <CommissionStatus />
           <CookieBanner />
         </ThemeProvider>
       </body>

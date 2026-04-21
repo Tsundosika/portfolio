@@ -95,7 +95,7 @@ export function ContactForm({ open }: { open: boolean }) {
           <path d="M14 25l7 7 13-14" stroke="#4A6B3C" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
         <p className="text-xl font-semibold text-forest">Request sent!</p>
-        <p className="text-ink/60 text-base">I&apos;ll reach out to you soon.</p>
+        <p className="text-ink/60 text-base">Ren will respond to you soon.</p>
         <button
           onClick={() => formRef.current?.reset()}
           type="button"

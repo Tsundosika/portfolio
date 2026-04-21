@@ -33,7 +33,7 @@ export function CookieBanner() {
             <path d="M8 15c1 1.5 7 1.5 8 0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
           </svg>
           <p className="text-sm text-ink/65 leading-relaxed">
-            This site uses cookies to remember your preferences (like dark mode). No tracking, no ads.
+            This site uses cookies to remember your preferences and track your commission request status. No tracking, no ads.
           </p>
         </div>
         <div className="flex items-center gap-2 shrink-0">
