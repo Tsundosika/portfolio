@@ -1,5 +1,4 @@
 const skills = [
-  "Watercolor",
   "Digital Art",
   "Ink & Pen",
   "Mixed Media",
@@ -16,18 +15,13 @@ export function About() {
 
       <div className="space-y-6 mb-10">
         <p className="text-xl text-ink/75 leading-relaxed">
-          Hey! I&apos;m Ren, an artist known online as Tsundosika. I&apos;ve been creating art for
-          as long as I can remember — from pencil sketches in school notebooks to digital worlds
-          on a drawing tablet.
+        Hi im ren
         </p>
         <p className="text-xl text-ink/75 leading-relaxed">
-          My work spans traditional and digital mediums. I love the organic imperfection of
-          watercolor, the precision of ink linework, and the infinite possibilities of digital
-          art. Each piece is a small adventure.
+        i didnt have time yet for a proper about me
         </p>
         <blockquote className="mx-auto max-w-xl border-l-[3px] border-terracotta/55 pl-5 text-left text-xl italic text-ink/60">
-          &ldquo;Art is where I make sense of the world — and where I stop making sense
-          entirely.&rdquo;
+          Just do it instead of thinking about it - Musa
         </blockquote>
       </div>
 
